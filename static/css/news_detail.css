@@ -1,0 +1,38 @@
+/* Import Merriweather and Open Sans fonts */
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
+/* Basic styling for the news article */
+.news-article {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.article-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 0;
+  font-family: 'Merriweather', serif;
+}
+
+.article-date {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.article-description {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.article-text {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 20px;
+}

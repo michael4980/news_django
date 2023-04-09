@@ -1,0 +1,53 @@
+/* Style for the news list page */
+
+/* Set the background color */
+body {
+  background-color: #f2f2f2;
+}
+
+/* Style the news list container */
+.news-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+/* Style the news item */
+.news-item {
+  background-color: #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Style the news item title */
+.news-item h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* Style the news item description */
+.news-item p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Style the news item link */
+.news-item a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Style the news item link on hover */
+.news-item a:hover {
+  color: #f00;
+}

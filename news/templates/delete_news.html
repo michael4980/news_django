@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block news_actions %}
+  
+{% endblock %}
+
+{% block content %}
+  <h2>Are you sure you want to delete "{{ news.title }}"?</h2>
+  <form method="post" action="{% url 'delete_news' pk=news.pk %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="{% url 'news_list' %}" class="btn btn-secondary">Cancel</a>
+  </form>
+{% endblock %}

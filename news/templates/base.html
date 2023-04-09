@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+  <title>{% block title %}Stroyportal_test{% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/news_list.css' %}"/>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="{% url 'news_list' %}">Новости</a></li>
+      <li><a href="{% url 'not_displayed' %}">Скрытые новости</a></li>
+    </ul>
+  </nav>
+  <div class="content">
+    {% block content %}{% endblock %}
+  </div>
+  
+  {% block pagination %}
+    {% if page_obj.has_other_pages %}
+      <div class="pagination">
+        <span class="step-links">
+          {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}" class="previous">&laquo;</a>
+          {% else %}
+            <a class="previous disabled">&laquo;</a>
+          {% endif %}
+
+          {% for i in paginator.page_range %}
+            {% if page_obj.number == i %}
+              <span class="current-page">{{ i }}</span>
+            {% elif i > page_obj.number|add:'-3' and i < page_obj.number|add:'3' %}
+              <a href="?page={{ i }}">{{ i }}</a>
+            {% endif %}
+          {% endfor %}
+
+          {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="next">&raquo;</a>
+          {% else %}
+            <a class="next disabled">&raquo;</a>
+          {% endif %}
+        </span>
+      </div>
+    {% endif %}
+  {% endblock %}
+
+  {% block news_actions %}
+    <div class="news-actions">
+      <a href="{% url 'add_news' %}">Добавить новость</a>
+    </div>
+  {% endblock %}
+  
+</body>
+</html>

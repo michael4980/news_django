@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Список новостей{% endblock %}
+
+{% block head %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/news.css' %}"/>
+{% endblock %}
+
+{% block content %}
+  <h1>Список новостей</h1>
+  <div class="news-list">
+    {% for new in news %}
+      <div class="news-item">
+        <h2 class="news-title"><a href="{% url 'news_detail' pk=new.pk %}">{{ new.title }}</a></h2>
+        <p class="news-description">{{ new.description }}</p>
+      </div>
+    {% empty %}
+      <p>Нет новостей</p>
+    {% endfor %}
+  </div>
+{% endblock %}
+

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block news_actions %}
+  {# This block is overridden and left empty in add_news.html #}
+{% endblock %}
+
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/add_news.css' %}"/>
+  <h1 style="text-align: center;">Создать новость</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Опубликовать</button>
+  </form>
+{% endblock %}

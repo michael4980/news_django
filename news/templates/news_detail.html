@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block news_actions %}
+  
+{% endblock %}
+
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/news_detail.css' %}"/>
+  <div class="news-article">
+    <h1 class="article-title">{{ news.title }}</h1>
+    <p class="article-date">{{ news.pub_date }}</p>
+    <p class="article-description">{{ news.description }}</p>
+    <p class="article-text">{{ news.text }}</p>
+  </div>
+{% endblock %}
