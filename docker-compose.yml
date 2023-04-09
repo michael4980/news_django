@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  news_site:
+      build: .
+      restart: always
+      container_name: news
+      command: bash -c "python3 manage.py runserver 0.0.0.0:9090"
